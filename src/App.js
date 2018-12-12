@@ -7,9 +7,19 @@ class App extends Component {
     super();
     
     this.state ={
-      text: ''
+      text: '',
+      recipe: []
     }
   }
+
+  submit() {
+    const { recipe, text } = this.state;
+
+    recipe.push( { text });
+
+    this.setState({ recipe });
+  }
+  
   render() {
     return(
       <div>
@@ -19,6 +29,13 @@ class App extends Component {
         {''}
         <Button onClick={() => console.log(this.state)}>Submit</Button>
       </Form>
+      {
+        this.state.recipe.map(recipe => {
+          return (
+            <div>{recipe.text}</div>
+          )
+        })
+      } 
       </div>
     )
   }
