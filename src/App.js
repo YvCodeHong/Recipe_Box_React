@@ -19,6 +19,8 @@ class App extends Component {
 
     this.setState({ recipe });
   }
+
+
   
   render() {
     return(
@@ -29,6 +31,8 @@ class App extends Component {
         {''}
         <Button onClick={() => console.log(this.state)}>Submit</Button>
       </Form>
+        
+        <Button bsStyle="primary" bsSize="large" active>I want to sell my tickets</Button>
       {
         this.state.recipe.map(recipe => {
           return (
